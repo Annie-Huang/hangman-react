@@ -1,0 +1,10 @@
+Build Hangman With React
+https://www.youtube.com/watch?v=jj0W8tYX_q8
+
+https://github.com/bradtraversy/vanillawebprojects/tree/master/hangman
+https://github.com/codeSTACKr/hangman-react
+https://github.com/Annie-Huang/hangman-react
+
+=========================================================
+
+C:\react>npx create-react-app hangman-react
