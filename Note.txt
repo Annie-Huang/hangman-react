@@ -8,3 +8,5 @@ https://github.com/Annie-Huang/hangman-react
 =========================================================
 
 C:\react>npx create-react-app hangman-react
+C:\react\hangman-react>npm ci
+
