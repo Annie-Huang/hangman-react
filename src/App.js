@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Header from "./components/Header";
 import Figure from "./components/Figure";
@@ -14,10 +14,12 @@ function App() {
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
 
-  window.addEventListener('keydown', e => {
-    if (playable) {
-      if (e.keyCode >= 65 && e.keyCode <= 90) {
-        const letter = e.key.toLowerCase();
+  useEffect(() => {
+    const handleKeydown = event => {
+      const {key, keyCode} = event;
+
+      if (playable && keyCode >= 65 && keyCode <= 90) {
+        const letter = key.toLowerCase();
 
         if (selectedWord.includes(letter)) {
           if (!correctLetters.includes(letter)) {
@@ -38,7 +40,7 @@ function App() {
         }
       }
     }
-  });
+  })
 
   return (
     <>
