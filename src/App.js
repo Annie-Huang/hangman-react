@@ -40,6 +40,8 @@ function App() {
 
     window.addEventListener('keydown', handleKeydown);
 
+    // This is to removeEventListener when we finish, rather than keep adding them. 
+    return () => window.removeEventListener('keydown', handleKeydown);
   })
 
   return (
