@@ -14,6 +14,32 @@ function App() {
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
 
+  window.addEventListener('keydown', e => {
+    if (playable) {
+      if (e.keyCode >= 65 && e.keyCode <= 90) {
+        const letter = e.key.toLowerCase();
+
+        if (selectedWord.includes(letter)) {
+          if (!correctLetters.includes(letter)) {
+            correctLetters.push(letter);
+
+            displayWord();
+          } else {
+            showNotification();
+          }
+        } else {
+          if (!wrongLetters.includes(letter)) {
+            wrongLetters.push(letter);
+
+            updateWrongLettersEl();
+          } else {
+            showNotification();
+          }
+        }
+      }
+    }
+  });
+
   return (
     <>
       <Header />
