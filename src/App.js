@@ -23,19 +23,16 @@ function App() {
 
         if (selectedWord.includes(letter)) {
           if (!correctLetters.includes(letter)) {
-            correctLetters.push(letter);
-
-            displayWord();
+            // set can get the use the function to get current data.
+            setCorrectLetters(currentLetters => [...currentLetters, letter])
           } else {
-            showNotification();
+            // showNotification();
           }
         } else {
           if (!wrongLetters.includes(letter)) {
-            wrongLetters.push(letter);
-
-            updateWrongLettersEl();
+            setWrongLetters(currentLetters => [...currentLetters, letter])
           } else {
-            showNotification();
+            // showNotification();
           }
         }
       }
