@@ -37,6 +37,9 @@ function App() {
         }
       }
     }
+
+    window.addEventListener('keydown', handleKeydown);
+
   })
 
   return (
