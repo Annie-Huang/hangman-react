@@ -42,14 +42,14 @@ function App() {
 
     // This is to removeEventListener when we finish, rather than keep adding them.
     return () => window.removeEventListener('keydown', handleKeydown);
-    
+
   }, [correctLetters, wrongLetters, playable])
 
   return (
     <>
       <Header />
       <div className="game-container">
-        <Figure />
+        <Figure wrongLetters={wrongLetters} />
         <WrongLetters wrongLetters={wrongLetters} />
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       </div>
