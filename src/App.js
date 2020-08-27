@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Figure from "./components/Figure";
 import WrongLetters from "./components/WrongLetters";
 import Word from "./components/Word";
+import {showNotification as show} from "./helpers/helper";
 
 const words = ['application', 'programming', 'interface', 'wizard'];
 
@@ -13,6 +14,7 @@ function App() {
   const [playable, setPlayable] = useState(true);
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
+  const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
     const handleKeydown = event => {
@@ -26,13 +28,13 @@ function App() {
             // set can get the use the function to get current data.
             setCorrectLetters(currentLetters => [...currentLetters, letter])
           } else {
-            // showNotification();
+            show(setShowNotification);
           }
         } else {
           if (!wrongLetters.includes(letter)) {
             setWrongLetters(currentLetters => [...currentLetters, letter])
           } else {
-            // showNotification();
+            show(setShowNotification);
           }
         }
       }
