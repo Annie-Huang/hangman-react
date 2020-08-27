@@ -5,6 +5,8 @@ import Figure from "./components/Figure";
 import WrongLetters from "./components/WrongLetters";
 import Word from "./components/Word";
 import {showNotification as show} from "./helpers/helper";
+import Popup from "./components/Popup";
+import Notification from "./components/Notification";
 
 const words = ['application', 'programming', 'interface', 'wizard'];
 
@@ -55,6 +57,8 @@ function App() {
         <WrongLetters wrongLetters={wrongLetters} />
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       </div>
+      <Popup />
+      <Notification showNotification={showNotification} />
     </>
   );
 }
