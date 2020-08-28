@@ -19,7 +19,7 @@ const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable}) => {
   useEffect(() => setPlayable(playable));
 
   return (
-    <div className="popup-container">
+    <div className="popup-container" style={finalMessage !== '' ? {display: 'flex'} : {}}>
       <div className="popup">
         <h2>{finalMessage}</h2>
         <h3>{finalMessageRevealWord}</h3>
