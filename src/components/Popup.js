@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {checkWin} from "../helpers/helper";
 
 const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable}) => {
@@ -14,6 +14,9 @@ const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable}) => {
     finalMessageRevealWord = `...the word was: ${selectedWord}`;
     playable = false
   }
+
+  // This is a very cool way defined when to call setPlayable:
+  useEffect(() => setPlayable(playable));
 
   return (
     <div className="popup-container">
